@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Life Advice - Ahmed Dalhoumi</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Background with Night Sky */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1e215d, #0b0d17);
+      color: white;
+      height: 100vh;
+      overflow: hidden;
+      line-height: 1.8;
+    }
+
+    /* Star Animation */
+    .star {
+      width: 3px;
+      height: 3px;
+      background-color: white;
+      position: absolute;
+      border-radius: 50%;
+      animation: twinkle 2s linear infinite;
+    }
+
+    @keyframes twinkle {
+      0% {
+        opacity: 0.2;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.2;
+      }
+    }
+
+    /* Header Section */
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px 10%;
+      text-align: center;
+      border-bottom: 3px solid #e74c3c;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.7);
+      font-size: 24px;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    header h1 {
+      margin-bottom: 5px;
+      font-size: 36px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Content Section */
+    .container {
+      margin: 50px auto;
+      padding: 20px;
+      max-width: 800px;
+      text-align: center;
+      color: #f5f5f5;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      animation: slideIn 1.5s ease-in-out;
+    }
+
+    /* Buttons with Animations */
+    .buttons {
+      margin: 30px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .buttons a {
+      padding: 10px 20px;
+      background: #e74c3c;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background 0.3s ease, transform 0.2s ease;
+      animation: pulse 1.5s ease infinite;
+    }
+
+    .buttons a:hover {
+      background: #ff6f61;
+      transform: scale(1.1);
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-30px);
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      .container {
+        max-width: 90%;
+      }
+
+      .buttons a {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Starry Night Animation -->
+  <div class="container" id="star-container"></div>
+
+  <!-- Header Section -->
+  <header>
+    <h1>🌌 Best Life Advice 🌠</h1>
+  </header>
+
+  <!-- Main Content Section -->
+  <div class="container">
+    <p>
+      Sometimes life can feel like a journey with many ups and downs. But remember, consistency is key. Wake up every day
+      and strive for progress, not perfection. Work hard, stay humble, and most importantly—never skip a gym day 💪!
+    </p>
+
+    <div class="buttons">
+      <a href="index.html">Back to Home 🏠</a>
+      <a href="social.html">Explore Social Media 🚀</a>
+    </div>
+  </div>
+
+  <script>
+    const starContainer = document.getElementById('star-container');
+    const createStars = () => {
+      for (let i = 0; i < 200; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.top = `${Math.random() * 100}vh`;
+        star.style.animationDelay = `${Math.random()}s`;
+        starContainer.appendChild(star);
+      }
+    };
+    createStars();
+  </script>
+</body>
+
+</html>
